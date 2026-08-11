@@ -6,6 +6,7 @@ on:
 permissions:
   actions: read
   contents: read
+  packages: read
 
 jobs:
   build:
@@ -22,6 +23,8 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         run: npm run build:dev
       - name: Upload artifact
