@@ -32,6 +32,8 @@ jobs:
           ignore-semver-check: "false" # If set to "true", will not check if the version number is a valid semver version.
       - name: Build scripts
         run: npm run build
+      - name: Set repository URL for generated modules
+        run: npm pkg set homepage="https://github.com/${{ github.repository }}"
       - name: Generate modules
         run: npm run build:args
       - name: Upload artifact
