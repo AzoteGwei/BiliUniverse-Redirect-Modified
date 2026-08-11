@@ -3,7 +3,6 @@ import gRPC from "@nsnanocat/grpc";
 import database from "./function/database.mjs";
 import setENV from "./function/setENV.mjs";
 import { WireType, UnknownFieldHandler, reflectionMergePartial, MESSAGE_TYPE, MessageType, BinaryReader, isJsonObject, typeofJsonValue, jsonWriteOptions } from "@protobuf-ts/runtime/build/es2015/index.js";
-import { Any } from "./protobuf/google/protobuf/any.js";
 /***************** Processing *****************/
 // 解构URL
 const url = new URL($request.url);
@@ -268,7 +267,6 @@ Console.info(`FORMAT: ${FORMAT}`, "");
 														//{ no: 2, name: "play_arc_conf", kind: "message", T: () => PlayArcConf },
 														//{ no: 3, name: "play_device_conf", kind: "message", T: () => PlayDeviceConf },
 														//{ no: 4, name: "event", kind: "message", T: () => Event },
-														//{ no: 5, name: "supplement", kind: "message", T: () => Any },
 														//{ no: 6, name: "play_arc", kind: "message", T: () => PlayArc },
 														//{ no: 7, name: "qn_trial_info", kind: "message", T: () => QnTrialInfo },
 														//{ no: 8, name: "history", kind: "message", T: () => History },
