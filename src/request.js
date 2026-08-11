@@ -150,6 +150,10 @@ Console.info(`FORMAT: ${FORMAT}`);
 					}
 					switch (url.port) {
 						case "": {
+							if (url.protocol === "http:" && url.searchParams.has("xy_usource")) {
+								url.hostname = url.searchParams.get("xy_usource") || Settings.Host.PCDN;
+								break;
+							}
 							switch (true) {
 								case url.hostname.endsWith(".mcdn.bilivideo.cn"):
 									switch (true) {

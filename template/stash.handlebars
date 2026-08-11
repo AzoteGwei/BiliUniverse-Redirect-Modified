@@ -19,6 +19,7 @@ http:
     - "*.bilivideo.com:80"
     - "*.mcdn.bilivideo.cn:80"
     - "upos-*-mirrorakam.akamaized.net:80"
+    - "*:486"
     - "*:4480"
     - "*:8000"
     - "*:9102"
@@ -57,7 +58,11 @@ http:
       name: "📺 BiliBili.Redirect.request"
       type: request
       argument:
-    - match: ^https?:\/\/(.+):4480\/upgcxcode\/
+    - match: ^http:\/\/(.+):486\/
+      name: "📺 BiliBili.Redirect.request"
+      type: request
+      argument:
+    - match: ^http:\/\/(.+):(?:80|4480)\/upgcxcode\/
       name: "📺 BiliBili.Redirect.request"
       type: request
       argument:
